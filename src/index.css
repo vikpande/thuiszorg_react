@@ -32,12 +32,25 @@ table {
   border-spacing: 0;
 }
 
+.table-light {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 thead tr:hover {
   background: transparent;
 }
 
 tr:hover {
-  background: white;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+tr a.table-link {
+  color: rgba(0, 0, 0, 0.7);
+  align-content: center;
+}
+
+a.table-link:hover {
+  color: #007aff;
 }
 
 td {
@@ -46,6 +59,14 @@ td {
 
 th {
   padding: 16px 0;
+}
+
+tr td:first-child {
+  padding-left: 16px;
+}
+
+tr td:last-child {
+  padding-right: 16px;
 }
 
 th:last-child {

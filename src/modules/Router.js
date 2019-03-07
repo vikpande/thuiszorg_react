@@ -15,6 +15,8 @@ const Router = () => (
       <Route path="/dossiers" component={App} />
       <Route path="/medewerkers" component={App} />
       <Route path="/activiteiten" component={App} />
+      <Route path="/dossiers/:dossierId" component={App} />
+      <Route path="/medewerkers/:medewerkerId" component={App} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
