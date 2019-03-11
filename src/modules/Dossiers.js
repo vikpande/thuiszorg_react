@@ -25,9 +25,16 @@ class Dossiers extends Component {
     }
 
     render() {
-        let dossierList = this.props.dossierlist.dossiers
+        let dossierList = this.props.dossierlist.dossiers;
+        let dossierStrings = Object.keys(dossierList);
+        let filteredList = dossierStrings.filter(
+            (dossier) => {
+                return dossierList[dossier].babyname.indexOf(this.state.search) !== -1
+            }
+        )
 
-        // Place the filter/search logic. State is already updating on change input or dropdown.
+        console.log(dossierList);
+        console.log(filteredList);
 
         return (
             <Grid>
