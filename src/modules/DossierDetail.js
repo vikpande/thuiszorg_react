@@ -4,7 +4,10 @@ class DossierDetail extends Component {
 
     render() {
         return (
-            <h1>DossierDetail</h1>
+            <div>
+                <h1>DossierDetail</h1>
+                <p>{this.props.match.params.dossierId}</p>
+            </div>
         );
     }
 }

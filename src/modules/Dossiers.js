@@ -8,8 +8,27 @@ import Button from "../components/Button";
 import Employee from "../components/Employee";
 
 class Dossiers extends Component {
+    constructor() {
+        super();
+        this.state = {
+            search: "",
+            status: "all"
+        }
+    }
+
+    updateSearch(event) {
+        this.setState({ search: event.target.value.substr(0, 20) });
+    }
+
+    updateStatus(event) {
+        this.setState({ status: event.target.value });
+    }
 
     render() {
+        let dossierList = this.props.dossierlist.dossiers
+
+        // Place the filter/search logic. State is already updating on change input or dropdown.
+
         return (
             <Grid>
                 <h1>Dossiers</h1>
@@ -19,9 +38,11 @@ class Dossiers extends Component {
                             type="text"
                             placeholder="Zoek een dossier"
                             className="search-input"
+                            value={this.state.search}
+                            onChange={this.updateSearch.bind(this)}
                         />
-                        <Select>
-                            <option value="all">Alle dossiers</option>
+                        <Select onChange={this.updateStatus.bind(this)}>
+                            <option value="all" defaultValue> Alle dossiers</option>
                             <option value="open">Open dossiers</option>
                             <option value="closed">Gesloten dossiers</option>
                         </Select>
@@ -41,36 +62,28 @@ class Dossiers extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><NavLink to="/dossiers/637564" className="table-link">637564</NavLink></td>
-                            <td><NavLink to="/dossiers/637564" className="table-link">John Doe</NavLink></td>
-                            <td>Open</td>
-                            <td><Employee /></td>
-                            <td>10<span className="table-light"> / 28</span></td>
-                            <td className="table-light">10 min geleden</td>
-                            <td><a href>Download ↘︎</a></td>
-                        </tr>
-                        <tr>
-                            <td><NavLink to="/dossiers/836465" className="table-link">836465</NavLink></td>
-                            <td><NavLink to="/dossiers/836465" className="table-link">Wes Kino</NavLink></td>
-                            <td>Gesloten</td>
-                            <td><Employee /></td>
-                            <td>22<span className="table-light"> / 22</span></td>
-                            <td className="table-light">2 uur geleden</td>
-                            <td><a href>Download ↘︎</a></td>
-                        </tr>
-                        <tr>
-                            <td><NavLink to="/dossiers/587365" className="table-link">587365</NavLink></td>
-                            <td><NavLink to="/dossiers/587365" className="table-link">Hans Puik</NavLink></td>
-                            <td>Open</td>
-                            <td><Employee /></td>
-                            <td>6<span className="table-light"> / 20</span></td>
-                            <td className="table-light">gisteren 11:45</td>
-                            <td><a href>Download ↘︎</a></td>
-                        </tr>
+                        {Object.keys(dossierList).map(key =>
+                            <tr key={key}>
+                                <td>
+                                    <NavLink to={"/dossiers/" + dossierList[key].dossiernumber} className="table-link">
+                                        {dossierList[key].dossiernumber}
+                                    </NavLink>
+                                </td>
+                                <td>
+                                    <NavLink to={"/dossiers/" + dossierList[key].dossiernumber} className="table-link">
+                                        {dossierList[key].babyname}
+                                    </NavLink>
+                                </td>
+                                <td>{dossierList[key].dossierstatus}</td>
+                                <td><Employee employeeId={dossierList[key].medewerker} /></td>
+                                <td>{dossierList[key].hoursleft}<span className="table-light"> / {dossierList[key].hourstotal}</span></td>
+                                <td className="table-light">{dossierList[key].lastupdate}</td>
+                                <td><NavLink to={dossierList[key].downloadlink}>Download ↘︎</NavLink></td>
+                            </tr>
+                        )}
                     </tbody>
                 </table>
-            </Grid>
+            </Grid >
         );
     }
 }
