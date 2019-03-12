@@ -27,16 +27,15 @@ class Dossiers extends Component {
     render() {
         let dossierList = this.props.dossierlist.dossiers;
         let dossierListArray = Object.values(dossierList);
-        console.log('dossierListArray',dossierListArray)
-        // let dossierStrings = Object.keys(dossierList);
         let filteredList = dossierListArray.filter(
             (eachDossier) => {
-                return eachDossier.babyname.indexOf(this.state.search) !== -1
+                return (
+                    eachDossier.babyname.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                    eachDossier.medewerker.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                    eachDossier.dossiernumber.toString().indexOf(this.state.search) !== -1
+                )
             }
         )
-
-        console.log(dossierList);
-        console.log(filteredList);
 
         return (
             <Grid>
@@ -71,23 +70,23 @@ class Dossiers extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {Object.keys(dossierList).map(key =>
+                        {Object.keys(filteredList).map(key =>
                             <tr key={key}>
                                 <td>
-                                    <NavLink to={"/dossiers/" + dossierList[key].dossiernumber} className="table-link">
-                                        {dossierList[key].dossiernumber}
+                                    <NavLink to={"/dossiers/" + filteredList[key].dossiernumber} className="table-link">
+                                        {filteredList[key].dossiernumber}
                                     </NavLink>
                                 </td>
                                 <td>
-                                    <NavLink to={"/dossiers/" + dossierList[key].dossiernumber} className="table-link">
-                                        {dossierList[key].babyname}
+                                    <NavLink to={"/dossiers/" + filteredList[key].dossiernumber} className="table-link">
+                                        {filteredList[key].babyname}
                                     </NavLink>
                                 </td>
-                                <td>{dossierList[key].dossierstatus}</td>
-                                <td><Employee employeeId={dossierList[key].medewerker} /></td>
-                                <td>{dossierList[key].hoursleft}<span className="table-light"> / {dossierList[key].hourstotal}</span></td>
-                                <td className="table-light">{dossierList[key].lastupdate}</td>
-                                <td><NavLink to={dossierList[key].downloadlink}>Download ↘︎</NavLink></td>
+                                <td>{filteredList[key].dossierstatus}</td>
+                                <td><Employee employeeId={filteredList[key].medewerker} /></td>
+                                <td>{filteredList[key].hoursleft}<span className="table-light"> / {filteredList[key].hourstotal}</span></td>
+                                <td className="table-light">{filteredList[key].lastupdate}</td>
+                                <td><NavLink to={filteredList[key].downloadlink}>Download ↘︎</NavLink></td>
                             </tr>
                         )}
                     </tbody>
