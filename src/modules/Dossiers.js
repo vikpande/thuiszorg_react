@@ -26,10 +26,12 @@ class Dossiers extends Component {
 
     render() {
         let dossierList = this.props.dossierlist.dossiers;
-        let dossierStrings = Object.keys(dossierList);
-        let filteredList = dossierStrings.filter(
-            (dossier) => {
-                return dossierList[dossier].babyname.indexOf(this.state.search) !== -1
+        let dossierListArray = Object.values(dossierList);
+        console.log('dossierListArray',dossierListArray)
+        // let dossierStrings = Object.keys(dossierList);
+        let filteredList = dossierListArray.filter(
+            (eachDossier) => {
+                return eachDossier.babyname.indexOf(this.state.search) !== -1
             }
         )
 
