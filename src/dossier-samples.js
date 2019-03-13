@@ -29,6 +29,27 @@ const dossiers = {
         hourstotal: 20,
         lastupdate: "gisteren 11:45",
         downloadlink: "#"
+    },
+    dossier4: {
+        dossiernumber: 477389,
+        babyname: "Jitze Horsten",
+        dossierstatus: "Open",
+        medewerker: "Valery Sneep",
+        hoursleft: 8,
+        hourstotal: 12,
+        lastupdate: "gisteren 09:57",
+        downloadlink: "#"
+    }
+    ,
+    dossier5: {
+        dossiernumber: 889726,
+        babyname: "Shirin Venhorst",
+        dossierstatus: "Gesloten",
+        medewerker: "Caroliene Budding",
+        hoursleft: 26,
+        hourstotal: 26,
+        lastupdate: "10 maart 15:33",
+        downloadlink: "#"
     }
 };
 

@@ -25,6 +25,7 @@ class Dossiers extends Component {
     }
 
     render() {
+
         let dossierList = this.props.dossierlist.dossiers;
         let dossierListArray = Object.values(dossierList);
         let filteredList = dossierListArray.filter(
@@ -44,7 +45,7 @@ class Dossiers extends Component {
                     <HorizontalGroup>
                         <Input
                             type="text"
-                            placeholder="Zoek een dossier"
+                            placeholder="Zoek op nummer, naam of medewerker"
                             className="search-input"
                             value={this.state.search}
                             onChange={this.updateSearch.bind(this)}
@@ -60,11 +61,11 @@ class Dossiers extends Component {
                 <table>
                     <thead>
                         <tr>
-                            <th>Dossiernummer</th>
+                            <th>Dossiernr.</th>
                             <th>Babynaam</th>
                             <th>Status</th>
                             <th>Medewerker</th>
-                            <th>Aantal uren beschikbaar</th>
+                            <th>Aantal uren</th>
                             <th>Laatst geupdate &#x25BC;</th>
                             <th>Download PDF</th>
                         </tr>

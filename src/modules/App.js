@@ -32,7 +32,7 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/dashboard" component={Dashboard} />
                             <Route exact path="/dossiers" render={() => <Dossiers dossierlist={this.state} />} />
-                            <Route exact path="/dossiers/:dossierId" component={DossierDetail} />
+                            <Route exact path="/dossiers/:dossierId" render={() => <DossierDetail dossierlist={this.state.dossiers} />} />
                             <Route exact path="/medewerkers" component={Medewerkers} />
                             <Route exact path="/medewerkers/:medewerkerId" component={MedewerkerDetail} />
                             <Route exact path="/activiteiten" component={Activiteiten} />
