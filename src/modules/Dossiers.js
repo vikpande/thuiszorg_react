@@ -25,7 +25,7 @@ class Dossiers extends Component {
     }
 
     render() {
-        let dossierList = this.props.dossierlist.dossiers
+        let dossierList = this.props.dossierlist
         let dossierListArray = Object.values(dossierList)
         let filteredList = dossierListArray.filter(
             (eachDossier) => {
@@ -86,7 +86,7 @@ class Dossiers extends Component {
                             <th>Medewerker</th>
                             <th>Aantal uren</th>
                             <th>Laatst geupdate &#x25BC;</th>
-                            <th>Download PDF</th>
+                            <th className="right">Download PDF</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,7 +106,7 @@ class Dossiers extends Component {
                                 <td><Employee employeeName={filteredList[key].medewerker} /></td>
                                 <td>{filteredList[key].hoursleft}<span className="table-light"> / {filteredList[key].hourstotal}</span></td>
                                 <td className="table-light">{filteredList[key].lastupdate}</td>
-                                <td><NavLink to={filteredList[key].downloadlink}>Download ↘︎</NavLink></td>
+                                <td className="right"><NavLink to={filteredList[key].downloadlink} className="download-link"> ↘︎</NavLink></td>
                             </tr>
                         )}
                     </tbody>

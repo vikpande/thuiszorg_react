@@ -19,6 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #f2f2f2;
   font-size: 14px;
+  overscroll-behavior-y: none;
 }
 
 code {
@@ -43,6 +44,10 @@ thead tr:hover {
 
 tr:hover {
   background: rgba(255, 255, 255, 0.6);
+}
+
+tr:hover .download-link:before {
+  content: "Download";
 }
 
 tr a.table-link {
@@ -70,11 +75,7 @@ tr td:last-child {
   padding-right: 16px;
 }
 
-th:last-child {
-  text-align: right;
-}
-
-td:last-child {
+.right {
   text-align: right;
 }
 

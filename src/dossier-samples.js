@@ -75,7 +75,7 @@ const dossiers = {
         babyname: "Bettine Baarslag",
         dossierstatus: "Gesloten",
         medewerker: "Tin Metsemakers",
-        hoursleft: 817,
+        hoursleft: 17,
         hourstotal: 17,
         lastupdate: "8 maart 14:22",
         downloadlink: "#"

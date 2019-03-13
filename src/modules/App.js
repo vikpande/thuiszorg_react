@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import dossierSamples from "../dossier-samples";
+import employeeSamples from "../employee-samples";
 import Navbar from "./Navbar";
 import Container from "../components/Container";
 import Dashboard from "./Dashboard";
@@ -16,12 +17,14 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            dossiers: {}
+            dossiers: {},
+            employees: {}
         }
     }
 
     componentDidMount() {
         this.setState({ dossiers: dossierSamples });
+        this.setState({ employees: employeeSamples });
     }
 
     render() {
@@ -33,9 +36,9 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/dashboard" component={Dashboard} />
                             <Route exact path="/klanten" component={Klanten} />
-                            <Route exact path="/dossiers" render={() => <Dossiers dossierlist={this.state} />} />
-                            <Route exact path="/dossiers/:dossierId" render={() => <DossierDetail dossierlist={this.state.dossiers} />} />
-                            <Route exact path="/medewerkers" component={Medewerkers} />
+                            <Route exact path="/dossiers" render={() => <Dossiers dossierlist={this.state.dossiers} />} />
+                            <Route exact path="/dossiers/:dossierId" render={() => <DossierDetail dossierlist={this.state} />} />
+                            <Route exact path="/medewerkers" render={() => <Medewerkers employeelist={this.state.employees} />} />
                             <Route exact path="/medewerkers/:medewerkerId" component={MedewerkerDetail} />
                             <Route exact path="/activiteiten" component={Activiteiten} />
                         </Switch>
