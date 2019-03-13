@@ -29,7 +29,7 @@ const NavigationBar = styled.nav`
 
 const NavLinks = styled.div`
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-template-rows: 1fr;
     grid-column-gap: 24px;
     align-items: center;
@@ -73,6 +73,7 @@ class Navbar extends Component {
             <NavigationBar>
                 <NavLink to="/dashboard" className="logoLink"><LogoSmall height="32" /></NavLink>
                 <NavLinks>
+                    <NavLink to="/klanten" activeClassName="active">Klanten</NavLink>
                     <NavLink to="/dossiers" activeClassName="active">Dossiers</NavLink>
                     <NavLink to="/medewerkers" activeClassName="active">Medewerkers</NavLink>
                     <NavLink to="/activiteiten" activeClassName="active">Activiteiten</NavLink>

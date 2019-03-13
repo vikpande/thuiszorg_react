@@ -12,6 +12,7 @@ const Router = () => (
       <Route path="/login" component={Login} />
       <Route path="/forgot-password" component={ForgotPassword} />
       <Route path="/dashboard" component={App} />
+      <Route path="/klanten" component={App} />
       <Route path="/dossiers" component={App} />
       <Route path="/medewerkers" component={App} />
       <Route path="/activiteiten" component={App} />

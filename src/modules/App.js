@@ -4,6 +4,7 @@ import dossierSamples from "../dossier-samples";
 import Navbar from "./Navbar";
 import Container from "../components/Container";
 import Dashboard from "./Dashboard";
+import Klanten from "./Klanten";
 import Dossiers from "./Dossiers";
 import DossierDetail from "./DossierDetail";
 import Medewerkers from "./Medewerkers";
@@ -31,6 +32,7 @@ class App extends Component {
                         <Navbar />
                         <Switch>
                             <Route exact path="/dashboard" component={Dashboard} />
+                            <Route exact path="/klanten" component={Klanten} />
                             <Route exact path="/dossiers" render={() => <Dossiers dossierlist={this.state} />} />
                             <Route exact path="/dossiers/:dossierId" render={() => <DossierDetail dossierlist={this.state.dossiers} />} />
                             <Route exact path="/medewerkers" component={Medewerkers} />
