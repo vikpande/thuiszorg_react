@@ -5,8 +5,8 @@ class DossierDetail extends Component {
     render() {
         return (
             <div>
-                <h1>Dossiername</h1>
-                <p>Dossiernumber</p>
+                <h1>Dossiernaam</h1>
+                <p>Dossiernummer</p>
             </div>
         );
     }

@@ -19,7 +19,7 @@ class Employee extends Component {
         return (
             <NavLink to="/medewerkers/123456" className="table-link">
                 <EmployeeGrid>
-                    <img alt="avatar" src="../../images/user-account.svg" height="24px" />{this.props.employeeId}
+                    <img alt="avatar" src="../../images/user-account.svg" height="24px" />{this.props.employeeName}
                 </EmployeeGrid>
             </NavLink>
         );

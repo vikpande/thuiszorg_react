@@ -25,15 +25,34 @@ class Dossiers extends Component {
     }
 
     render() {
-
-        let dossierList = this.props.dossierlist.dossiers;
-        let dossierListArray = Object.values(dossierList);
+        let dossierList = this.props.dossierlist.dossiers
+        let dossierListArray = Object.values(dossierList)
         let filteredList = dossierListArray.filter(
             (eachDossier) => {
+                if (this.state.status.toLowerCase() === "open") {
+                    return (
+                        eachDossier.dossierstatus.toLowerCase() === "open" && (
+                            eachDossier.babyname.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                            eachDossier.medewerker.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                            eachDossier.dossiernumber.toString().indexOf(this.state.search) !== -1
+                        )
+                    )
+                }
+                else if (this.state.status.toLowerCase() === "closed") {
+                    return (
+                        eachDossier.dossierstatus.toLowerCase() === "gesloten" && (
+                            eachDossier.babyname.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                            eachDossier.medewerker.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                            eachDossier.dossiernumber.toString().indexOf(this.state.search) !== -1
+                        )
+                    )
+                }
                 return (
-                    eachDossier.babyname.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
-                    eachDossier.medewerker.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
-                    eachDossier.dossiernumber.toString().indexOf(this.state.search) !== -1
+                    eachDossier.dossierstatus && (
+                        eachDossier.babyname.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                        eachDossier.medewerker.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                        eachDossier.dossiernumber.toString().indexOf(this.state.search) !== -1
+                    )
                 )
             }
         )
@@ -84,7 +103,7 @@ class Dossiers extends Component {
                                     </NavLink>
                                 </td>
                                 <td>{filteredList[key].dossierstatus}</td>
-                                <td><Employee employeeId={filteredList[key].medewerker} /></td>
+                                <td><Employee employeeName={filteredList[key].medewerker} /></td>
                                 <td>{filteredList[key].hoursleft}<span className="table-light"> / {filteredList[key].hourstotal}</span></td>
                                 <td className="table-light">{filteredList[key].lastupdate}</td>
                                 <td><NavLink to={filteredList[key].downloadlink}>Download ↘︎</NavLink></td>

@@ -4,7 +4,10 @@ class MedewerkerDetail extends Component {
 
     render() {
         return (
-            <h1>MedewerkerDetail</h1>
+            <div>
+                <h1>Medewerkernaam</h1>
+                <p>Medewerkernummer</p>
+            </div>
         );
     }
 }
