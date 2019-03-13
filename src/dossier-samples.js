@@ -39,8 +39,7 @@ const dossiers = {
         hourstotal: 12,
         lastupdate: "gisteren 09:57",
         downloadlink: "#"
-    }
-    ,
+    },
     dossier5: {
         dossiernumber: 889726,
         babyname: "Shirin Venhorst",
@@ -49,6 +48,36 @@ const dossiers = {
         hoursleft: 26,
         hourstotal: 26,
         lastupdate: "10 maart 15:33",
+        downloadlink: "#"
+    },
+    dossier6: {
+        dossiernumber: 117483,
+        babyname: "Sura Ezendam",
+        dossierstatus: "Open",
+        medewerker: "Carlyn Mozes",
+        hoursleft: 13,
+        hourstotal: 31,
+        lastupdate: "10 maart 11:13",
+        downloadlink: "#"
+    },
+    dossier7: {
+        dossiernumber: 187492,
+        babyname: "Tin van Glabbeek",
+        dossierstatus: "Open",
+        medewerker: "Wilke van Assen",
+        hoursleft: 8,
+        hourstotal: 15,
+        lastupdate: "9 maart 08:59",
+        downloadlink: "#"
+    },
+    dossier8: {
+        dossiernumber: 728744,
+        babyname: "Bettine Baarslag",
+        dossierstatus: "Gesloten",
+        medewerker: "Tin Metsemakers",
+        hoursleft: 817,
+        hourstotal: 17,
+        lastupdate: "8 maart 14:22",
         downloadlink: "#"
     }
 };
