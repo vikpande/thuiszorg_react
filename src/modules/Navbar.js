@@ -12,7 +12,7 @@ const NavigationBar = styled.nav`
     width: 100%;
     height: 60px;
     background-color: #003876;
-    z-index: 999;
+    z-index: 888;
 
     padding: 0 24px;
 

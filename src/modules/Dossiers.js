@@ -75,7 +75,9 @@ class Dossiers extends Component {
                             <option value="closed">Gesloten dossiers</option>
                         </Select>
                     </HorizontalGroup>
-                    <Button label="Nieuw dossier" />
+                    <NavLink to="/create-dossier">
+                        <Button label="Nieuw dossier" />
+                    </NavLink>
                 </HorizontalGroup>
                 <table>
                     <thead>

@@ -8,6 +8,7 @@ import Dashboard from "./Dashboard";
 import Klanten from "./Klanten";
 import Dossiers from "./Dossiers";
 import DossierDetail from "./DossierDetail";
+import NewDossier from "./NewDossier";
 import Medewerkers from "./Medewerkers";
 import MedewerkerDetail from "./MedewerkerDetail";
 import Activiteiten from "./Activiteiten";
@@ -34,13 +35,14 @@ class App extends Component {
                     <React.Fragment>
                         <Navbar />
                         <Switch>
-                            <Route exact path="/dashboard" component={Dashboard} />
-                            <Route exact path="/klanten" component={Klanten} />
+                            <Route path="/dashboard" component={Dashboard} />
+                            <Route path="/klanten" component={Klanten} />
                             <Route exact path="/dossiers" render={() => <Dossiers dossierlist={this.state.dossiers} />} />
                             <Route exact path="/dossiers/:dossierId" render={() => <DossierDetail dossierlist={this.state} />} />
+                            <Route exact path="/create-dossier" component={NewDossier} />
                             <Route exact path="/medewerkers" render={() => <Medewerkers employeelist={this.state.employees} />} />
                             <Route exact path="/medewerkers/:medewerkerId" component={MedewerkerDetail} />
-                            <Route exact path="/activiteiten" component={Activiteiten} />
+                            <Route path="/activiteiten" component={Activiteiten} />
                         </Switch>
                     </React.Fragment>
                 </BrowserRouter>

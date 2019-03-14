@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
 
-const KindHollow = `
-background-color: transparent !important;
-border-color: #007aff;
-color: #007aff;
-`;
-
-const KindBare = `
-background-color: transparent !important;
-border-color: transparent !important;
-color: #007aff;
+const Secondary = `
+background-color: #e9e9e9;
+border-color: #e9e9e9;
+color: #000000;
+font-weight: 400;
 `;
 
 const StyledButton = styled.button`
@@ -32,14 +27,13 @@ const StyledButton = styled.button`
         outline: 0;
     }
 
-    ${props => props.kind === "hollow" ? css`${KindHollow}` : ''}
-    ${props => props.kind === "bare" ? css`${KindBare}` : ''}
+    ${props => props.secondary ? css`${Secondary}` : ''}
 `;
 
 class Button extends Component {
     render() {
         return (
-            <StyledButton type={this.props.type} kind={this.props.kind}>{this.props.label}</StyledButton>
+            <StyledButton {...this.props}>{this.props.label}</StyledButton>
         );
     }
 }

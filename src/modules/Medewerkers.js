@@ -68,7 +68,7 @@ class Employees extends Component {
                                 <td>
                                     <Employee employeeName={filteredList[key].employeename} />
                                 </td>
-                                <td><a href="#" className="table-link">{filteredList[key].email}</a></td>
+                                <td><a href=" " className="table-link">{filteredList[key].email}</a></td>
                                 <td className="table-light">{filteredList[key].phonenumber}</td>
                                 <td className="table-light right">{filteredList[key].workedhours}</td>
                                 <td className="right">{filteredList[key].activedossiers}</td>
