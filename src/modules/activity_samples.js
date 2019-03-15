@@ -5,7 +5,7 @@ const activities = {
         employeename: "Chris Overzand",
         babynaam: "John Doe",
         category: "Care",
-        tijd: "10:00",
+        tijd: 10.00,
         comments: "New"
     }
 };

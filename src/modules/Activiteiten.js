@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import Grid from "../components/Grid";
 import HorizontalGroup from "../components/HorizontalGroup";
 import Input from "../components/Input";
-import activities from "../modules/activity_samples";
+// import activities from "../modules/activity_samples";
 
 class Activiteiten extends Component {
     constructor() {
