@@ -56,8 +56,6 @@ class Dossiers extends Component {
                 )
             }
         )
-
-        console.log(Date.now())
         return (
             <Grid>
                 <h1>Dossiers</h1>
@@ -95,8 +93,7 @@ class Dossiers extends Component {
                     <tbody>
                         {Object.keys(filteredList.sort(function (obj1, obj2) {
                             return (obj1.lastupdate > obj2.lastupdate) ? -1 : (obj1.lastupdate < obj2.lastupdate) ? 1 : 0;
-
-
+                            // To sort by a string:
                             // return (obj1.babyname < obj2.babyname) ? -1 : (obj1.babyname > obj2.babyname) ? 1 : 0;
                         })).map(key => <SingleDossierRow key={key} data={filteredList[key]} />)}
                     </tbody>
