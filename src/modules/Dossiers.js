@@ -24,6 +24,10 @@ class Dossiers extends Component {
         this.setState({ status: event.target.value });
     }
 
+    componentDidMount() {
+        this.setState({ sortby: "babyname" });
+    }
+
     render() {
         let dossierList = this.props.dossierlist
         let dossierListArray = Object.values(dossierList)
@@ -92,7 +96,9 @@ class Dossiers extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {Object.keys(filteredList).map(key => <SingleDossierRow key={key} data={filteredList[key]} />)}
+                        {Object.keys(filteredList.sort(function (obj1, obj2) {
+                            return (obj1.babyname < obj2.babyname) ? -1 : (obj1.babyname > obj2.babyname) ? 1 : 0;
+                        })).map(key => <SingleDossierRow key={key} data={filteredList[key]} />)}
                     </tbody>
                 </table>
             </Grid >
