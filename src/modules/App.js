@@ -37,9 +37,9 @@ class App extends Component {
                         <Switch>
                             <Route path="/dashboard" component={Dashboard} />
                             <Route path="/klanten" component={Klanten} />
-                            <Route exact path="/dossiers" render={() => <Dossiers dossierlist={this.state.dossiers} />} />
-                            <Route exact path="/dossiers/:dossierId" render={() => <DossierDetail dossierlist={this.state} />} />
-                            <Route exact path="/create-dossier" component={NewDossier} />
+                            <Route path="/dossiers/new" component={NewDossier} />
+                            <Route path="/dossiers/:dossierId" component={DossierDetail} />
+                            <Route path="/dossiers" render={() => <Dossiers dossierlist={this.state.dossiers} />} />
                             <Route exact path="/medewerkers" render={() => <Medewerkers employeelist={this.state.employees} />} />
                             <Route exact path="/medewerkers/:medewerkerId" component={MedewerkerDetail} />
                             <Route path="/activiteiten" component={Activiteiten} />

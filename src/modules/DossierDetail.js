@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class DossierDetail extends Component {
-
     render() {
         return (
             <div>
