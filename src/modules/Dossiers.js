@@ -24,10 +24,6 @@ class Dossiers extends Component {
         this.setState({ status: event.target.value });
     }
 
-    componentDidMount() {
-        this.setState({ sortby: "babyname" });
-    }
-
     render() {
         let dossierList = this.props.dossierlist
         let dossierListArray = Object.values(dossierList)
@@ -61,6 +57,7 @@ class Dossiers extends Component {
             }
         )
 
+        console.log(Date.now())
         return (
             <Grid>
                 <h1>Dossiers</h1>
@@ -87,17 +84,20 @@ class Dossiers extends Component {
                     <thead>
                         <tr>
                             <th>Dossiernr.</th>
-                            <th className="table-head-active">Babynaam</th>
+                            <th>Babynaam</th>
                             <th>Status</th>
                             <th>Medewerker</th>
                             <th>Aantal uren</th>
-                            <th>Laatst geupdate</th>
+                            <th className="table-head-active">Laatst geupdate</th>
                             <th className="right">Download PDF</th>
                         </tr>
                     </thead>
                     <tbody>
                         {Object.keys(filteredList.sort(function (obj1, obj2) {
-                            return (obj1.babyname < obj2.babyname) ? -1 : (obj1.babyname > obj2.babyname) ? 1 : 0;
+                            return (obj1.lastupdate > obj2.lastupdate) ? -1 : (obj1.lastupdate < obj2.lastupdate) ? 1 : 0;
+
+
+                            // return (obj1.babyname < obj2.babyname) ? -1 : (obj1.babyname > obj2.babyname) ? 1 : 0;
                         })).map(key => <SingleDossierRow key={key} data={filteredList[key]} />)}
                     </tbody>
                 </table>

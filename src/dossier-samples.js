@@ -7,7 +7,7 @@ const dossiers = {
         medewerker: "Anneloes de Hast",
         hoursleft: 10,
         hourstotal: 28,
-        lastupdate: "10 min geleden",
+        lastupdate: 1552757147370,
         downloadlink: "#"
     },
     dossier2: {
@@ -17,7 +17,7 @@ const dossiers = {
         medewerker: "Chris Overzand",
         hoursleft: 22,
         hourstotal: 22,
-        lastupdate: "2 uur geleden",
+        lastupdate: 1552748704139,
         downloadlink: "#"
     },
     dossier3: {
@@ -27,7 +27,7 @@ const dossiers = {
         medewerker: "Joanne Roel",
         hoursleft: 6,
         hourstotal: 20,
-        lastupdate: "gisteren 11:45",
+        lastupdate: 1552755703139,
         downloadlink: "#"
     },
     dossier4: {
@@ -37,7 +37,7 @@ const dossiers = {
         medewerker: "Valery Sneep",
         hoursleft: 8,
         hourstotal: 12,
-        lastupdate: "gisteren 09:57",
+        lastupdate: 1552755793139,
         downloadlink: "#"
     },
     dossier5: {
@@ -47,7 +47,7 @@ const dossiers = {
         medewerker: "Caroliene Budding",
         hoursleft: 26,
         hourstotal: 26,
-        lastupdate: "10 maart 15:33",
+        lastupdate: 1452755693139,
         downloadlink: "#"
     },
     dossier6: {
@@ -57,7 +57,7 @@ const dossiers = {
         medewerker: "Carlyn Mozes",
         hoursleft: 13,
         hourstotal: 31,
-        lastupdate: "10 maart 11:13",
+        lastupdate: 1542755685139,
         downloadlink: "#"
     },
     dossier7: {
@@ -67,7 +67,7 @@ const dossiers = {
         medewerker: "Wilke van Assen",
         hoursleft: 8,
         hourstotal: 15,
-        lastupdate: "9 maart 08:59",
+        lastupdate: 1452745685139,
         downloadlink: "#"
     },
     dossier8: {
@@ -77,7 +77,7 @@ const dossiers = {
         medewerker: "Tin Metsemakers",
         hoursleft: 17,
         hourstotal: 17,
-        lastupdate: "8 maart 14:22",
+        lastupdate: 1551725685139,
         downloadlink: "#"
     }
 };
