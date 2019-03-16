@@ -5,7 +5,7 @@ import HorizontalGroup from "../components/HorizontalGroup";
 import Input from "../components/Input";
 import Select from "../components/Select";
 import Button from "../components/Button";
-import Employee from "../components/Employee";
+import SingleDossierRow from "../modules/SingleDossierRow";
 
 class Dossiers extends Component {
     constructor() {
@@ -83,34 +83,16 @@ class Dossiers extends Component {
                     <thead>
                         <tr>
                             <th>Dossiernr.</th>
-                            <th>Babynaam</th>
+                            <th className="table-head-active">Babynaam</th>
                             <th>Status</th>
                             <th>Medewerker</th>
                             <th>Aantal uren</th>
-                            <th>Laatst geupdate &#x25BC;</th>
+                            <th>Laatst geupdate</th>
                             <th className="right">Download PDF</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {Object.keys(filteredList).map(key =>
-                            <tr key={key}>
-                                <td>
-                                    <NavLink to={"/dossiers/" + filteredList[key].dossiernumber} className="table-link">
-                                        {filteredList[key].dossiernumber}
-                                    </NavLink>
-                                </td>
-                                <td>
-                                    <NavLink to={"/dossiers/" + filteredList[key].dossiernumber} className="table-link">
-                                        {filteredList[key].babyname}
-                                    </NavLink>
-                                </td>
-                                <td>{filteredList[key].dossierstatus}</td>
-                                <td><Employee employeeName={filteredList[key].medewerker} /></td>
-                                <td>{filteredList[key].hoursleft}<span className="table-light"> / {filteredList[key].hourstotal}</span></td>
-                                <td className="table-light">{filteredList[key].lastupdate}</td>
-                                <td className="right"><NavLink to={filteredList[key].downloadlink} className="download-link"> ↘︎</NavLink></td>
-                            </tr>
-                        )}
+                        {Object.keys(filteredList).map(key => <SingleDossierRow key={key} data={filteredList[key]} />)}
                     </tbody>
                 </table>
             </Grid >
