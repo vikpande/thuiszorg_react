@@ -2,7 +2,7 @@
   "name": "thuiszorg_react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vikpande.github.io/thuiszorg_react",
+  "homepage": "https://vikpande.github.io/thuiszorg_react/",
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
