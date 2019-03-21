@@ -17,38 +17,38 @@ class Activiteiten extends Component {
         this.setState({ search: event.target.value.substr(0, 20) });
     }
     render() {
-        
+
 
         return (
             <Grid>
-            <h1>Activiteiten</h1>
-            <HorizontalGroup>
+                <h1>Activiteiten</h1>
                 <HorizontalGroup>
-                    <Input
-                        type="text"
-                        placeholder="Zoeken"
-                        className="search-input"
-                        value={this.state.search}
-                        onChange={this.updateSearch.bind(this)}
-                    />
+                    <HorizontalGroup>
+                        <Input
+                            type="text"
+                            placeholder="Zoeken"
+                            className="search-input"
+                            value={this.state.search}
+                            onChange={this.updateSearch.bind(this)}
+                        />
+                    </HorizontalGroup>
                 </HorizontalGroup>
-            </HorizontalGroup>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Activiteitennr.</th>
-                        <th>Medewerker &#x25BC;</th>
-                        <th>Babynaam &#x25BC;</th>
-                        <th>Category </th>
-                        <th className="right">Tijd &#x25BC;</th>
-                        <th className="right">Comments</th>
-                    </tr>
-                </thead>
-                {/* <tbody>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activiteitennr.</th>
+                            <th>Medewerker &#x25BC;</th>
+                            <th>Babynaam &#x25BC;</th>
+                            <th>Category </th>
+                            <th className="right">Tijd &#x25BC;</th>
+                            <th className="right">Comments</th>
+                        </tr>
+                    </thead>
+                    {/* <tbody>
                     
                 </tbody> */}
-            </table>
-        </Grid >
+                </table>
+            </Grid >
         );
     }
 }

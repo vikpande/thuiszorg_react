@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LogoLarge from "../components/LogoLarge";
-import Block from "../components/Block";
+import BlockLogin from "../components/BlockLogin";
 import ForgotPasswordForm from "../components/ForgotPasswordForm";
 import Input from "../components/Input";
 import HorizontalGroup from "../components/HorizontalGroup";
@@ -13,7 +13,7 @@ class ForgotPassword extends Component {
         return (
             <React.Fragment>
                 <LogoLarge />
-                <Block>
+                <BlockLogin>
                     <h1>Wachtwoord herstellen</h1>
                     <p>Verstuur een code naar je email adres om je wachtwoord te kunnen herstellen.</p>
                     <ForgotPasswordForm>
@@ -27,7 +27,7 @@ class ForgotPassword extends Component {
                             <Button label="Verstuur code" type="submit" />
                         </HorizontalGroup>
                     </ForgotPasswordForm>
-                </Block>
+                </BlockLogin>
             </React.Fragment>
         );
     }
