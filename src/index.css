@@ -155,3 +155,7 @@ label {
   text-transform: uppercase;
   margin: 0;
 }
+
+.assignees-table {
+  width: fit-content;
+}

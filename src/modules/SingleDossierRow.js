@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Employee from "../components/Employee";
+import Assignees from "../modules/Assignees";
 
 function timeDifference(current, previous) {
 
@@ -53,7 +54,12 @@ class SingleDossierRow extends Component {
                     </NavLink>
                 </td>
                 <td>{this.props.data.dossierstatus}</td>
-                <td><Employee employeeName={this.props.data.medewerker} /></td>
+                <td>
+                    <div className="assignees-table">
+                        <Assignees size="32px" small />
+                    </div>
+                    {/* <Employee employeeName={this.props.data.medewerker} /> */}
+                </td>
                 <td>{this.props.data.hoursleft}<span className="table-light"> / {this.props.data.hourstotal}</span></td>
                 <td className="table-light">{
                     timeDifference(Date.now(), this.props.data.lastupdate)

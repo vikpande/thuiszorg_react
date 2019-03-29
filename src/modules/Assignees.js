@@ -1,36 +1,32 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: 1fr;
     grid-auto-flow: column;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
     align-items: center;
-    justify-items: start;
     img:first-child {
         margin-left: 0px;
     }
     img {
-        margin-left: -16px;
+        box-sizing: border-box;
+        margin-left: ${props => props.small ? css`${"-32px"}` : '-12px'};
         border-radius: 50%;
         border: 4px solid #f2f2f2;
+        height: ${props => props.size || "40px"};
     }
-    a {
+    p {
         margin-left: 8px;
     }
 `;
 
 class Assignees extends Component {
-
     render() {
         return (
-            <Grid>
+            <Grid size={this.props.size}>
                 <img alt="avatar" src="../../images/user-account.svg" />
                 <img alt="avatar" src="../../images/user-account.svg" />
                 <img alt="avatar" src="../../images/user-account.svg" />
-                <a>Aanpassen</a>
             </Grid>
         );
     }

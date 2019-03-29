@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LogoLarge from '../components/LogoLarge';
-import Block from '../components/Block';
+import BlockLogin from '../components/BlockLogin';
 import LoginForm from '../components/LoginForm';
 import Input from '../components/Input';
 import HorizontalGroup from '../components/HorizontalGroup';
@@ -12,7 +12,7 @@ class Login extends Component {
 		return (
 			<React.Fragment>
 				<LogoLarge />
-				<Block>
+				<BlockLogin>
 					<h1>Inloggen</h1>
 					<LoginForm action="/dashboard">
 						<Input
@@ -31,7 +31,7 @@ class Login extends Component {
 						</HorizontalGroup>
 					</LoginForm>
 					<p>Als je nog geen Babythuiszorg account hebt kan je informatie aanvragen bij je manager.</p>
-				</Block>
+				</BlockLogin>
 			</React.Fragment>
 		);
 	}
